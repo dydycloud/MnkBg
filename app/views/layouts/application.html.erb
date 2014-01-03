@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MnkBg</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+<div class="pure-g-r" id="layout">
+	<div class="sidebar pure-u">
+	    <header class="header">
+			<hgroup>
+				<img src="http://terrainracing.com/images/logos/monkey.png" width="200px" height="200px" alt="">
+                <h1 class="brand-title">Monkey Blog</h1>
+                <h2 class="brand-tagline"><small>Monkey's stuff & Orange Juice</small></h2>
+            </hgroup>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="pure-button" href="/">
+                            <i class="fa fa-home fa-lg"></i>
+                        </a>
+                    </li><br>
+                    <li class="nav-item">
+                        <a class="pure-button" href="">
+                            <i class="fa fa-lightbulb-o fa-lg"> Techno</i>
+                        </a>
+                    </li><br>
+                    <li class="nav-item">
+                        <a class="pure-button" href="">
+                            <i class="fa fa-gears fa-lg"> Dev</i>
+                        </a>
+                    </li><br>
+                    <li class="nav-item">
+                        <a class="pure-button" href="">
+                            <i class="fa fa-play-circle-o fa-lg"> Music</i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+		</header>
+	</div>
+	<%= yield %>
+</div>
+
+</body>
+</html>

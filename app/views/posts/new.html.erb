@@ -1,0 +1,22 @@
+<div class="pure-u-1">
+    <div class="content">
+    	<div class="posts">
+				<h1>Create a new Post</h1>
+				<%= form_for :post, html: {class:"pure-form"}, url: posts_path  do |f| %>
+					<fieldset>
+	        			<div class="pure-control-group">
+	        				<h3><%= f.label :title %></h3>
+	    					<%= f.text_field :title, size: "60" %><br>
+	        			</div>
+	        			<div class="pure-control-group">
+	        				<h3><%= f.label :text %></h3>
+	    					<%= f.text_area :text, size: "60x20" %><br><br>
+	        			</div>
+	        			<div class="pure-control-group">
+	        				<%= f.submit nil, class: "pure-button pure-button-secondary" %>
+	        			</div>
+	        		</fieldset>
+				<% end %>
+		</div>
+	</div>
+</div>

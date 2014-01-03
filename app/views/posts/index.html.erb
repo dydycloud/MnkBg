@@ -1,0 +1,22 @@
+<div class="pure-u-1">
+    <div class="content">
+    	<div class="posts">
+			<h1>Listing posts</h1>
+			<table class="pure-table pure-table-horizontal">
+			  <tr>
+			    <th>Title</th>
+			    <th>Text</th>
+			    <th>Date</th>
+			  </tr>
+			 
+			  <% @posts.each do |post| %>
+			    <tr>
+			      <td><%= post.title %></td>
+			      <td><%= truncate(post.text) { link_to "Continue", post_path(post) } %></td>
+			      <td><%= post.created_at.to_s(:long) %></td>
+			    </tr>
+			  <% end %>
+			</table>
+		</div>
+	</div>
+</div>
