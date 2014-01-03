@@ -11,7 +11,7 @@
 			 
 			  <% @posts.each do |post| %>
 			    <tr>
-			      <td><%= post.title %></td>
+			      <td><%= link_to post.title, post_path(post) %></td>
 			      <td><%= truncate(post.text) { link_to "Continue", post_path(post) } %></td>
 			      <td><%= post.created_at.to_s(:long) %></td>
 			    </tr>

@@ -13,6 +13,10 @@ a:focus {
     text-decoration: underline;
 }
 
+body {
+    color: rgb(24, 33, 61);
+}
+
 /* LAYOUT CSS */
 #layout {
     padding-left: 25%; /* "left col (nav + list)" width */
@@ -173,6 +177,15 @@ a:focus {
     background: rgb(24, 33, 61); /* this is a light blue */
 }
 
+.alert{
+    color: #df2d4f;
+    font-size: 28px;
+}
+
+.notice{
+    color: #5aba59;
+    font-size: 28px;
+}
 @media (max-width: 767px) {
     .sidebar {
         width: 100%;

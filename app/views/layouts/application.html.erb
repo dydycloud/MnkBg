@@ -8,43 +8,65 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
-<div class="pure-g-r" id="layout">
-	<div class="sidebar pure-u">
-	    <header class="header">
-			<hgroup>
-				<img src="http://terrainracing.com/images/logos/monkey.png" width="200px" height="200px" alt="">
-                <h1 class="brand-title">Monkey Blog</h1>
-                <h2 class="brand-tagline"><small>Monkey's stuff & Orange Juice</small></h2>
-            </hgroup>
+  <div class="pure-g-r" id="layout">
+  	<div class="sidebar pure-u">
+  	    <header class="header">
+          <hgroup>
+            <%= image_tag("monkey.png", size: "200x200", alt: "Logo")%>
+            <h1 class="brand-title">Monkey Blog</h1>
+            <h2 class="brand-tagline"><small>Monkey's stuff & Orange Juice</small></h2>
+          </hgroup>
 
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a class="pure-button" href="/">
-                            <i class="fa fa-home fa-lg"></i>
-                        </a>
-                    </li><br>
-                    <li class="nav-item">
-                        <a class="pure-button" href="">
-                            <i class="fa fa-lightbulb-o fa-lg"> Techno</i>
-                        </a>
-                    </li><br>
-                    <li class="nav-item">
-                        <a class="pure-button" href="">
-                            <i class="fa fa-gears fa-lg"> Dev</i>
-                        </a>
-                    </li><br>
-                    <li class="nav-item">
-                        <a class="pure-button" href="">
-                            <i class="fa fa-play-circle-o fa-lg"> Music</i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-		</header>
-	</div>
-	<%= yield %>
-</div>
-
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                  <a class="pure-button" href="/">
+                      <i class="fa fa-home fa-lg"></i>
+                  </a>
+              </li><br>
+              <li class="nav-item">
+                  <a class="pure-button" href="">
+                      <i class="fa fa-lightbulb-o fa-lg"> Techno</i>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="pure-button" href="">
+                      <i class="fa fa-gears fa-lg"> Dev</i>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="pure-button" href="">
+                      <i class="fa fa-play-circle-o fa-lg"> Music</i>
+                  </a>
+              </li><br>
+              <% if user_signed_in? %>
+                <hr>
+                <li class="nav-item"><%=link_to("Posts", posts_path, class: "pure-button") %></li>
+                <li class="nav-item"><%=link_to("Comments", posts_path, class: "pure-button") %></li><br>
+                <li class="nav-item"><%=link_to("Logout", destroy_user_session_path, :method => :delete, class: "pure-button") %></li>
+              <% end %>
+            </ul>
+          </nav>
+  		</header>
+  	</div>
+    <div class="pure-u-1">
+      <div class="content">
+        <div class="posts">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <%= yield %>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="pure-menu pure-menu-horizontal pure-menu-open">
+          <ul>
+            <li><a href="http://bemonkey.net/">Bemonkey</a></li>
+            <li><a href="http://twitter.com/yuilibrary/">Twitter</a></li>
+            <li><a href="http://github.com/yui/pure/">Github</a></li>
+          </ul>
+            </div>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
