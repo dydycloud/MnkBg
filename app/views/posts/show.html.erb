@@ -13,4 +13,36 @@
         <p id=""><%= @post.text %></p>
     </div>
 </section>
+<p>
+    <a href="#comments" role="button" class="fa fa-comment-o pure-button pure-button-secondary" data-toggle="modal"> <%= @post.comments.count() %>
+    </a>
+    <% if user_signed_in? %>
+        <%= link_to '', edit_post_path(@post), class: "fa fa-pencil pure-button pure-button-secondary" %>  
+        <%= link_to '', post_path(@post),
+                        method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-o pure-button pure-button-secondary", id: "trash" %>
+    <% end %>
+    <%= link_to '', :back, class: "fa fa-arrow-circle-left pure-button pure-button-secondary" %>
+</p>
+<div id="comments" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="comments" aria-hidden="true">
+    <div class="modal-header">
+        <h3 id="myModalLabel">
+            <a href="#addComment" role="button" class="fa fa-plus" data-toggle="modal"> add your comment
+            </a>
+            <div id="addComment" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="addComment" aria-hidden="true">
+                <div class="modal-header">
+                    <small><h3 id="myModalLabel" class="comTitle">Add a Comment</h3></small>
+                </div>
+                <small>
+                    <div class="modal-body comTitle">
+                        <%= render 'comments/form1' %>
+                    </div>
+                </small>
+        </h3>
+    </div>
+
+    <div class="modal-body">
+        <h3 class="comTitle">Comments</h3>
+        <%= render @post.comments %>
+    </div>
+</div>
 		

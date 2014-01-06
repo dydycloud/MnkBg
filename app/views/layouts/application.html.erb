@@ -41,6 +41,7 @@
               </li><br>
               <% if user_signed_in? %>
                 <hr>
+                <li><%= current_user.name %> | <%= Date.current %></li>
                 <li class="nav-item"><%=link_to("Posts", posts_path, class: "pure-button") %></li>
                 <li class="nav-item"><%=link_to("Comments", posts_path, class: "pure-button") %></li><br>
                 <li class="nav-item"><%=link_to("Logout", destroy_user_session_path, :method => :delete, class: "pure-button") %></li>
@@ -68,5 +69,6 @@
       </footer>
     </div>
   </div>
+  <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

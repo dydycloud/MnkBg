@@ -1,0 +1,13 @@
+<div class="pure-button-secondary comTitle">
+    <p>
+	    <%= comment.title %>
+		<% if user_signed_in? %>
+		     | 
+		    <%= link_to '', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-o", id: "trash" %>
+		<% end %>
+    </p>
+    <p><em><%= comment.commenter %></em></p> 
+</div>
+<blockquote>
+		<em><%= comment.body %></em>
+</blockquote>

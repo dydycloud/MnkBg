@@ -20,6 +20,19 @@ a:focus {
     position: relative;
 }
 
+.comTitle{
+    text-align: center;
+}
+.splash {
+    margin: 2em auto 0;
+    padding: 3em 0.5em;
+    background: #eee;
+    text-align: center;
+}
+.splash ul{
+    list-style-type: none;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -173,15 +186,38 @@ a:focus {
 .pure-button-secondary {
     background: rgb(24, 33, 61); /* this is a light blue */
 }
+.field_with_errors label{
+    background: #df2d4f;
+}
 
+.pure-button-xsmall {
+    font-size: 70%;
+}
+
+.pure-button-small {
+    font-size: 85%;
+}
+
+.pure-button-large {
+    font-size: 110%;
+}
+
+.pure-button-xlarge {
+    font-size: 125%;
+}
+
+#trash{
+    text-decoration: none;
+    color: rgb(202, 60, 60);
+}
 .alert{
     color: #df2d4f;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .notice{
     color: #5aba59;
-    font-size: 28px;
+    font-size: 24px;
 }
 @media (max-width: 767px) {
     .sidebar {
